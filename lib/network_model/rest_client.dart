@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:api_call_with_retrofit/model/address_model.dart';
 import 'package:api_call_with_retrofit/model/task_model.dart';
 import 'package:api_call_with_retrofit/model/update_model.dart';
 import 'package:dio/dio.dart' hide Headers;
@@ -43,4 +44,7 @@ abstract class RestClient {
   Future<dynamic> deleteJob(
     @Path("id") int id,
   );
+
+  @GET("https://order.com.np/api/shipping-address")
+  Future<AddressModel> getLocation();
 }

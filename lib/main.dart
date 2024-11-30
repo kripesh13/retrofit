@@ -1,3 +1,5 @@
+import 'package:api_call_with_retrofit/page/address_Model/address_screen.dart';
+import 'package:api_call_with_retrofit/page/address_Model/address_state.dart';
 import 'package:api_call_with_retrofit/page/home_model/home_screen.dart';
 import 'package:api_call_with_retrofit/page/home_model/home_state.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: ChangeNotifierProvider(
-          create: (context) => HomeState(), child: const HomeScreen()),
+          create: (context) => AddressState(), child: const AddressScreen()),
     );
   }
 }

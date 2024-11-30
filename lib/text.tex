@@ -1,5 +1,8 @@
-keytool -genkey -v -keystore $env:USERPROFILE\roadSewa.jks `-storetype JKS -keyalg RSA -keysize 2048 -validity 10000 `-alias upload
-storePassword=test
-keyPassword=test
-keyAlias=upload
-storeFile=apiRetro.jks
+% keytool -genkey -v -keystore $env:USERPROFILE\roadSewa.jks `-storetype JKS -keyalg RSA -keysize 2048 -validity 10000 `-alias upload
+% storePassword=test
+% keyPassword=test
+% keyAlias=upload
+% storeFile=apiRetro.jks
+
+
+% dart pub run build_runner build
