@@ -1,3 +1,6 @@
+import 'package:api_call_with_retrofit/page/address_Model/address_screen.dart';
+import 'package:api_call_with_retrofit/page/animation/animation.dart';
+import 'package:api_call_with_retrofit/page/example/example.dart';
 import 'package:api_call_with_retrofit/page/home_model/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,13 +34,11 @@ class HomeScreen extends StatelessWidget {
                               child: Image.file(state.image!)),
                       InkWell(
                           onTap: () {
-                            state.selectImage();
+                            Navigator.push(context,
+                                CustomPageTransition(page: Example()));
                           },
-                          child: const Icon(Icons.send)),
-
-
-
-                           InkWell(
+                          child: const Icon(Icons.send,size: 200,)),
+                      InkWell(
                           onTap: () {
                             state.deleteJob();
                           },

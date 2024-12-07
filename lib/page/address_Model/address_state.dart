@@ -2,7 +2,7 @@ import 'package:api_call_with_retrofit/model/address_model.dart';
 import 'package:api_call_with_retrofit/network_model/rest_client.dart';
 import 'package:flutter/material.dart';
 
-import '../../network_model/dio_injuction.dart';
+import '../../network_model/dio_interceptors.dart';
 
 class AddressState extends ChangeNotifier {
   bool isLoading = false;
@@ -77,7 +77,7 @@ List<GetRouteCharge> ?getRouteChargeList = [];
   AddressModel addressModel = AddressModel();
   getLocation() {
     setLoading(true);
-    restClint.getLocation().then(
+    restClient.getLocation().then(
       (value) {
         addressModel = value;
         onChangeProvinceName(value.data?.first.engName ?? "", value.data?.first.districts ?? []);

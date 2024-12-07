@@ -4,7 +4,7 @@ import 'package:api_call_with_retrofit/network_response/app_exception.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-final restClint = RestClient(dio);
+final restClient = RestClient(dio);
 final dio = getDio();
 
 Dio getDio() {

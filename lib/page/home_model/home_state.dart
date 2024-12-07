@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:api_call_with_retrofit/model/task_model.dart';
-import 'package:api_call_with_retrofit/network_model/dio_injuction.dart';
+import 'package:api_call_with_retrofit/network_model/dio_interceptors.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -28,7 +28,7 @@ class HomeState extends ChangeNotifier {
   TaskModel taskModel = TaskModel();
   bool isLoading = true;
   getData() async {
-    await restClint.getTask().then((value) {
+    await restClient.getTask().then((value) {
       taskModel = value;
       isLoading = false;
       notifyListeners();
@@ -40,7 +40,7 @@ class HomeState extends ChangeNotifier {
   }
 
   post() {
-    restClint.postJob(nameController.text, jobController.text).then(
+    restClient.postJob(nameController.text, jobController.text).then(
       (value) {
         // print(value);
         nameController.clear();
@@ -50,19 +50,19 @@ class HomeState extends ChangeNotifier {
   }
 
   updateData() {
-    restClint.updateJob(252, "Test", "Developer", "derojgar").then((value) {
+    restClient.updateJob(252, "Test", "Developer", "derojgar").then((value) {
       print(value.name);
     });
   }
 
    deleteJob() {
-    restClint.deleteJob(252).then((value) {
+    restClient.deleteJob(252).then((value) {
       print(value);
     });
   }
 
   selectImage() async {
-    restClint.postImage(image!,'image').then(
+    restClient.postImage(image!,'image').then(
       (value) {
         print(value);
       },
