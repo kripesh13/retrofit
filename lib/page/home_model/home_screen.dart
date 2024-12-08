@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
     return Consumer<HomeState>(builder: (context, state, _) {
       return Scaffold(
           appBar: AppBar(),
-          body: state.isLoading == true
+          body: state.isLoading 
               ? const Center(
                   child: CircularProgressIndicator(),
                 )
