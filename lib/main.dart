@@ -1,10 +1,16 @@
 
+import 'package:api_call_with_retrofit/firebase_options.dart';
 import 'package:api_call_with_retrofit/page/HOME_sCREEN/new_home_screen.dart';
-import 'package:api_call_with_retrofit/page/home_model/bloc/home_bloc.dart';
+import 'package:api_call_with_retrofit/page/HOME_sCREEN/home_provider/home_bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const MyApp());
 }
 

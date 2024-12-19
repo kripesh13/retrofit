@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:api_call_with_retrofit/page/home_model/bloc/home_bloc.dart';
+import 'package:api_call_with_retrofit/page/HOME_sCREEN/home_provider/home_bloc.dart';
 
 class NewHomeScreen extends StatefulWidget {
   const NewHomeScreen({super.key});
@@ -25,11 +25,9 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
           if (state.isLoading) {
             return const Center(child: CircularProgressIndicator());
           }
-
           if (state.error != null) {
             return Center(child: Text('Error: ${state.error}'));
           }
-
           return ListView(
             children: state.homeModel?.data?.services?.map((service) {
                   return ListTile(

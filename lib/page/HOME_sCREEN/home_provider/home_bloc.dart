@@ -1,4 +1,3 @@
-import 'dart:isolate';
 
 import 'package:api_call_with_retrofit/model/home_model.dart';
 import 'package:api_call_with_retrofit/network_model/dio_interceptors.dart';
@@ -9,7 +8,7 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(HomeState()) {
+  HomeBloc() : super(const HomeState()) {
     on<LoadHomeData>(_getData);
   }
   Future<void> _getData(HomeEvent event, Emitter<HomeState> emit) async {
